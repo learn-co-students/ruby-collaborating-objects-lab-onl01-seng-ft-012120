@@ -5,21 +5,32 @@ class Artist
   def initialize(name)
     @name = name
     @@all << self
+    @songs = []
   end
   
   def self.all
     @@all
   end
   
-  def self.add_song
-    
+  def add_song(song)
+    @songs << song
   end
   
-  def self.songs
-    
+  def songs
+    @songs
   end
   
-  def find_or_create_by_name
+  def self.find_or_create_by_name(artist_name)
+    @all.each do |artist| 
+      if artist.name == artist_name
+        artist.name
+      else
+        
+      end
+    end
+  end
+  
+  def print_songs
     
   end
 end
